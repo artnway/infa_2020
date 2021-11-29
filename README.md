@@ -1,3 +1,3 @@
 # infa_2020
 
-lets add somethin to the file
+test string of my file, made localy on PC

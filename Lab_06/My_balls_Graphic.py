@@ -123,12 +123,12 @@ class Manager:
                 s.dead()
                 s.add_point()
                 print('В точку!')
-                print(s.allive)
+                print("Осталось ", s.allive, "шарика.")
 
     def if_empty(self):
         if event.type == pygame.MOUSEBUTTONDOWN:
             s.shot()
-            print("Осталось ", s.show_shots(), "выстрелов")
+            print("Осталось ", s.show_shots(), "выстрелов.")
 
 
 s = Counter()
@@ -147,7 +147,13 @@ while not m.finished:
     screen.fill("white")
 
 """Сделать раунды: старт, гейм овер. Сделать отображение кол-ва выстрелов, кол-ва очков,
-и прикрутить прицел на мышку. Сделать бонсные очки за оставшиеся пули."""
+и прикрутить прицел на мышку."""
 
 pygame.quit()
-print("Вы набрли:", s.show_score(), "очков!")
+
+if s.shots > 0:
+    for i in range(s.shots):
+        s.add_point()
+    print("Вы набрли:", s.show_score(), "очков!")
+else:
+    print("Вы набрли:", s.show_score(), "очков!")
